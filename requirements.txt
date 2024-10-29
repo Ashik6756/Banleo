@@ -1,1 +1,2 @@
-rembg
+git add requirements.txt
+git commit -m "Додано файл requirements.txt з залежністю rembg"
