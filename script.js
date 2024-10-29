@@ -13,13 +13,14 @@ document.getElementById('removeBgBtn').addEventListener('click', async () => {
         const response = await fetch('https://api.remove.bg/v1.0/removebg', {
             method: 'POST',
             headers: {
-                'X-Api-Key': '<uhrikoaM3QPBHoJZicSMsKKv>', // Вставте сюди ваш API ключ
+                'X-Api-Key': '<Tt5Jyf5PP8kGEJqwjrGPEWVH>', // Вставте сюди ваш API ключ
             },
             body: formData,
         });
 
         if (!response.ok) {
-            throw new Error('Сталася помилка при видаленні фону: ' + response.statusText);
+            const errorText = await response.text(); // Отримайте текст помилки
+            throw new Error('Сталася помилка при видаленні фону: ' + errorText);
         }
 
         const blob = await response.blob();
