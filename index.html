@@ -1,90 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banleo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Banleo Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Конкурси</a></li>
+                <li><a href="#">Ігри</a></li>
+                <li><a href="#">Навчання</a></li>
+                <li><a href="#">Підручники</a></li>
+                <li><a href="#">Програми</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #0a6f9b, #1f2641);
-    color: #333;
-}
+    <main>
+        <section class="categories">
+            <div class="card">
+                <img src="program-icon.png" alt="Програми">
+                <h3>Програми</h3>
+                <p>Розділ: 1</p>
+            </div>
+            <div class="card">
+                <img src="calculator-icon.png" alt="Калькулятори">
+                <h3>Калькулятори</h3>
+                <p>Розділ: 4</p>
+            </div>
+            <div class="card">
+                <img src="minecraft-icon.png" alt="Minecraft">
+                <h3>Minecraft</h3>
+                <p>Розділ: 3</p>
+            </div>
+            <div class="card">
+                <img src="game-icon.png" alt="Ігри">
+                <h3>Ігри</h3>
+                <p>Розділ: 2</p>
+            </div>
+            <div class="card">
+                <img src="learning-icon.png" alt="Навчання">
+                <h3>Навчання</h3>
+                <p>Розділ: 1</p>
+            </div>
+            <div class="card">
+                <img src="project-icon.png" alt="Особисті проекти">
+                <h3>Особисті проекти</h3>
+                <p>Розділ: 1</p>
+            </div>
+            <div class="card">
+                <img src="articles-icon.png" alt="Статті">
+                <h3>Статті</h3>
+                <p>Розділ: 0</p>
+            </div>
+        </section>
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #0a6f9b;
-    color: #fff;
-}
+        <section class="halloween-contest">
+            <p>Геловінський конкурс <a href="#">Banleo</a></p>
+            <input type="text" placeholder="Інфо">
+        </section>
 
-nav ul {
-    display: flex;
-    gap: 15px;
-}
+        <section class="about">
+            <h2>Про нас</h2>
+            <p>Banleo або BNL – це сайт...</p>
+        </section>
+    </main>
 
-nav ul li {
-    list-style: none;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    border-radius: 8px;
-    width: 200px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.halloween-contest {
-    background: #f8b400;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.halloween-contest input {
-    padding: 5px;
-}
-
-.about {
-    padding: 20px;
-    text-align: center;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
-footer .social-icons img {
-    width: 25px;
-    margin: 0 5px;
-}
+    <footer>
+        <div class="footer-content">
+            <img src="footer-logo.png" alt="Banleo Logo">
+            <p>Контакти-Адміністрація | Політика конфіденційності | Умови використання</p>
+            <div class="social-icons">
+                <!-- Іконки соціальних мереж -->
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
