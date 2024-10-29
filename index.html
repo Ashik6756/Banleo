@@ -1,11 +1,18 @@
-// Requires "Apache HttpComponents" to be installed (see hc.apache.org)
-
-Response response = Request.Post("https://api.remove.bg/v1.0/removebg")
-    .addHeader("X-Api-Key", "INSERT_YOUR_API_KEY_HERE")
-    .body(
-        MultipartEntityBuilder.create()
-        .addBinaryBody("image_file", new File("/path/to/file.jpg"))
-        .addTextBody("size", "auto")
-        .build()
-    ).execute();
-response.saveContent(new File("no-bg.png"));
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видалення фону</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Видалення фону з зображення</h1>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button id="removeBgBtn">Видалити фон</button>
+        <canvas id="outputCanvas"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
