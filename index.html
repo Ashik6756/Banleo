@@ -1,22 +1,33 @@
-from rembg import remove
-from PIL import Image
-import io
+document.getElementById('removeBgBtn').addEventListener('click', async () => {
+    const fileInput = document.getElementById('imageUpload');
+    if (!fileInput.files[0]) {
+        alert('Будь ласка, виберіть зображення.');
+        return;
+    }
 
-# Функція для видалення фону
-def remove_background(input_image_path, output_image_path):
-    with open(input_image_path, 'rb') as input_file:
-        input_image = input_file.read()
+    const formData = new FormData();
+    formData.append('image', fileInput.files[0]);
 
-    # Видалення фону
-    output_image = remove(input_image)
+    // Заміни <YOUR_API_ENDPOINT> на реальний URL API для видалення фону
+    const response = await fetch('<YOUR_API_ENDPOINT>', {
+        method: 'POST',
+        body: formData,
+    });
 
-    # Збереження зображення без фону
-    with open(output_image_path, 'wb') as output_file:
-        output_file.write(output_image)
+    if (!response.ok) {
+        alert('Сталася помилка при видаленні фону.');
+        return;
+    }
 
-# Використання функції
-input_path = 'path/to/your/image.jpg'  # Вкажіть шлях до вашого зображення
-output_path = 'path/to/output/image.png'  # Вкажіть шлях для збереження зображення без фону
+    const blob = await response.blob();
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(blob);
 
-remove_background(input_path, output_path)
-print("Фон успішно видалено та збережено за адресою:", output_path)
+    const canvas = document.getElementById('outputCanvas');
+    const ctx = canvas.getContext('2d');
+    img.onload = () => {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+    };
+});
