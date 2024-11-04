@@ -13,6 +13,9 @@
         }
 
         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Задаємо мінімальну висоту для тіла */
             background-color: #f5f5f5;
             color: #333;
             overflow-x: hidden;
@@ -54,6 +57,7 @@
             align-items: center;
             margin: 20px auto;
             max-width: 400px;
+            flex: 1; /* Додаємо гнучкість для заповнення простору */
         }
 
         .calculator-button {
@@ -120,7 +124,7 @@
     </div>
 
     <footer>
-        <p> Banleo 2024 Калькулятори </p>
+        <p>Banleo 2024 Калькулятори</p>
     </footer>
 
 </body>
