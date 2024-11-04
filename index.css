@@ -51,34 +51,44 @@
             color: #f5a623;
         }
 
-        /* Різнокольорові секції */
-        section {
+        /* Секція з зображенням та текстом */
+        .section-1 {
+            display: flex;
+            align-items: center;
+            background-color: #ff6b6b;
+            color: white;
             padding: 60px 20px;
+        }
+
+        .section-1 .image-container {
+            flex: 1;
             text-align: center;
         }
 
-        .section-1 {
-            background: url('https://i.ibb.co/wprTcPF/9494567.png') center/cover no-repeat;
-            color: white;
-            height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .section-1 .image-container img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .section-1 h2 {
-            font-size: 3em;
+        .section-1 .content-container {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(45deg, #f5a623, #4ecdc4);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-1 .content-container h2 {
+            font-size: 2.5em;
             margin-bottom: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 10px;
         }
 
-        .btn-primary {
+        .section-1 .btn-primary {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #ff6b6b;
+            background-color: #355c7d;
             color: white;
             font-size: 1.2em;
             text-decoration: none;
@@ -87,16 +97,16 @@
             margin-top: 20px;
         }
 
-        .btn-primary:hover {
-            background-color: #f5a623;
+        .section-1 .btn-primary:hover {
+            background-color: #c06c84;
         }
 
         /* Інші секції */
-        .section-2 { background: #ff6b6b; color: white; }
-        .section-3 { background: #f5a623; color: white; }
-        .section-4 { background: #355c7d; color: white; }
-        .section-5 { background: #c06c84; color: white; }
-        .section-6 { background: #6a0572; color: white; }
+        .section-2 { background: #ff6b6b; color: white; padding: 60px 20px; text-align: center; }
+        .section-3 { background: #f5a623; color: white; padding: 60px 20px; text-align: center; }
+        .section-4 { background: #355c7d; color: white; padding: 60px 20px; text-align: center; }
+        .section-5 { background: #c06c84; color: white; padding: 60px 20px; text-align: center; }
+        .section-6 { background: #6a0572; color: white; padding: 60px 20px; text-align: center; }
 
         section h2 {
             font-size: 2.5em;
@@ -108,16 +118,6 @@
             line-height: 1.5;
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        /* Плавний перехід між секціями */
-        .fade-in {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         /* Нижній колонтитул */
@@ -134,10 +134,9 @@
 
         /* Адаптивність */
         @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            nav a { font-size: 1em; }
-            section h2 { font-size: 2em; }
-            section p { font-size: 1em; }
+            .section-1 {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -159,10 +158,16 @@
         <a href="#section-6">Відгуки</a>
     </nav>
 
-    <!-- Секція з зображенням -->
-    <section id="section-1" class="section-1 fade-in">
-        <h2>Перший клас</h2>
-        <a href="https://sites.google.com/view/banleok/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0" class="btn-primary">Перейти на сайт</a>
+    <!-- Секція з зображенням зліва та текстом справа -->
+    <section id="section-1" class="section-1">
+        <div class="image-container">
+            <img src="https://i.ibb.co/wprTcPF/9494567.png" alt="Перший клас">
+        </div>
+        <div class="content-container">
+            <h2>Перший клас</h2>
+            <p>Дізнайтеся більше про наші навчальні програми та методики, які допоможуть вашим дітям досягати успіху!</p>
+            <a href="https://sites.google.com/view/banleok/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0" class="btn-primary">Перейти на сайт</a>
+        </div>
     </section>
 
     <!-- Інші секції контенту -->
