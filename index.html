@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кольоровий сайт</title>
+    <style>
+        /* Базові налаштування для сторінки */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Заголовок */
+        header {
+            background: linear-gradient(45deg, #ff6b6b, #f5a623, #4ecdc4);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+        }
+
+        /* Меню навігації */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5a623;
+        }
+
+        /* Різнокольорові секції */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-1 { background: #4ecdc4; color: white; }
+        .section-2 { background: #ff6b6b; color: white; }
+        .section-3 { background: #f5a623; color: white; }
+        .section-4 { background: #355c7d; color: white; }
+        .section-5 { background: #c06c84; color: white; }
+        .section-6 { background: #6a0572; color: white; }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Плавний перехід між секціями */
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Нижній колонтитул */
+        footer {
+            background: #333;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1.1em;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            nav a { font-size: 1em; }
+            section h2 { font-size: 2em; }
+            section p { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Заголовок -->
+    <header>
+        <h1>Вітаємо на нашому кольоровому сайті!</h1>
+        <p>Сайт, де яскравість оживає.</p>
+    </header>
+
+    <!-- Меню навігації -->
+    <nav>
+        <a href="#section-1">Про нас</a>
+        <a href="#section-2">Послуги</a>
+        <a href="#section-3">Галерея</a>
+        <a href="#section-4">Новини</a>
+        <a href="#section-5">Контакти</a>
+        <a href="#section-6">Відгуки</a>
+    </nav>
+
+    <!-- Секції контенту -->
+    <section id="section-1" class="section-1 fade-in">
+        <h2>Про нас</h2>
+        <p>Ми - команда професіоналів, що створює вражаючі веб-рішення для бізнесу та творчих проєктів. Наш сайт — це відображення нашої любові до яскравих дизайнів.</p>
+    </section>
+
+    <section id="section-2" class="section-2 fade-in">
+        <h2>Наші Послуги</h2>
+        <p>Ми пропонуємо повний спектр веб-послуг: від дизайну до розробки та підтримки. Наші клієнти завжди задоволені результатом.</p>
+    </section>
+
+    <section id="section-3" class="section-3 fade-in">
+        <h2>Галерея</h2>
+        <p>Перегляньте наші попередні роботи! Ми радіємо кожному проєкту та прагнемо досконалості.</p>
+    </section>
+
+    <section id="section-4" class="section-4 fade-in">
+        <h2>Новини</h2>
+        <p>Слідкуйте за нашими останніми оновленнями, новинами та новими проєктами. Ми завжди в русі!</p>
+    </section>
+
+    <section id="section-5" class="section-5 fade-in">
+        <h2>Контакти</h2>
+        <p>Зв’яжіться з нами для отримання додаткової інформації або замовлення послуг. Ми відкриті до співпраці!</p>
+    </section>
+
+    <section id="section-6" class="section-6 fade-in">
+        <h2>Відгуки</h2>
+        <p>Наші клієнти довіряють нам та завжди задоволені роботою. Ось що вони кажуть про нас!</p>
+    </section>
+
+    <!-- Нижній колонтитул -->
+    <footer>
+        <p>&copy; 2024 Кольоровий сайт. Усі права захищені.</p>
+    </footer>
+
+</body>
+</html>
