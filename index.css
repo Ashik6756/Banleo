@@ -57,7 +57,41 @@
             text-align: center;
         }
 
-        .section-1 { background: #4ecdc4; color: white; }
+        .section-1 {
+            background: url('https://i.ibb.co/wprTcPF/9494567.png') center/cover no-repeat;
+            color: white;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-1 h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff6b6b;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #f5a623;
+        }
+
+        /* Інші секції */
         .section-2 { background: #ff6b6b; color: white; }
         .section-3 { background: #f5a623; color: white; }
         .section-4 { background: #355c7d; color: white; }
@@ -125,12 +159,13 @@
         <a href="#section-6">Відгуки</a>
     </nav>
 
-    <!-- Секції контенту -->
+    <!-- Секція з зображенням -->
     <section id="section-1" class="section-1 fade-in">
-        <h2>Про нас</h2>
-        <p>Ми - команда професіоналів, що створює вражаючі веб-рішення для бізнесу та творчих проєктів. Наш сайт — це відображення нашої любові до яскравих дизайнів.</p>
+        <h2>Перший клас</h2>
+        <a href="https://sites.google.com/view/banleok/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0" class="btn-primary">Перейти на сайт</a>
     </section>
 
+    <!-- Інші секції контенту -->
     <section id="section-2" class="section-2 fade-in">
         <h2>Наші Послуги</h2>
         <p>Ми пропонуємо повний спектр веб-послуг: від дизайну до розробки та підтримки. Наші клієнти завжди задоволені результатом.</p>
