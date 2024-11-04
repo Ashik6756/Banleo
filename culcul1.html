@@ -5,20 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор дробів</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
         body {
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding-bottom: 60px; /* Відступ для футера */
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
         }
 
         header {
@@ -26,22 +19,37 @@
             padding: 20px;
             text-align: center;
             color: white;
-            width: 100%;
         }
 
-        header h1 {
-            font-size: 3em;
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none; /* Прибираємо підкреслення */
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f5a623;
         }
 
         .calculator {
-            background: white;
             border: 2px solid #ccc;
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: 20px 0;
-            width: 100%;
+            margin: 20px;
+            flex-grow: 1; /* Дозволяє калькулятору займати доступний простір */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .display {
@@ -50,12 +58,11 @@
             background: #f9f9f9;
             text-align: right;
             padding: 10px;
-            font-size: 24px;
+            font-size: 18px;
             border: none;
             border-radius: 5px;
             box-sizing: border-box;
             margin-bottom: 10px;
-            color: #333;
         }
 
         .buttons {
@@ -71,7 +78,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
-            color: #333; /* Змінюємо колір тексту на темний */
+            background: #ccc; /* Сірий фон для кнопок */
         }
 
         button:active {
@@ -79,16 +86,17 @@
         }
 
         .operator {
-            background: #e0e0e0; /* Світло-сірий фон для операторів */
+            background: #2196f3; /* Синій фон для операторів */
+            color: white;
         }
 
         .equal {
-            background: #4CAF50; /* Зелений фон для кнопки рівності */
+            background: #4CAF50;
             color: white;
         }
 
         .clear {
-            background: #f44336; /* Червоний фон для кнопки очищення */
+            background: #f44336;
             color: white;
         }
 
@@ -97,9 +105,6 @@
             padding: 20px;
             color: white;
             text-align: center;
-            width: 100%;
-            position: fixed; /* Фіксована позиція */
-            bottom: 0; /* Прикріплюємо до низу */
         }
 
         footer p {
@@ -108,10 +113,18 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Калькулятор дробів</h1>
-        <p>Зручні інструменти для вашого обчислення</p>
+        <p>Зручний інструмент для роботи з дробами</p>
     </header>
+
+    <nav>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Калькулятори</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Підручники</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F?authuser=0">Навчання</a>
+        <a href="https://sites.google.com/view/banleok/%D1%96%D0%B3%D1%80%D0%B8?authuser=0">Ігри</a>
+    </nav>
 
     <div class="calculator">
         <input type="text" class="display" id="display" disabled>
@@ -170,5 +183,6 @@
             });
         });
     </script>
+
 </body>
 </html>
