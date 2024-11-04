@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кольоровий сайт</title>
+    <link rel="icon" href="https://i.ibb.co/LRZGHVj/OIG3-removebg-preview.png" type="image/png"> <!-- Додавання значка сайту -->
     <style>
-        /* Базові налаштування для сторінки */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,9 +19,8 @@
             overflow-x: hidden;
         }
 
-        /* Заголовок */
         header {
-            background: linear-gradient(45deg, #ff6b6b, #f5a623, #4ecdc4);
+            background: linear-gradient(45deg, #9c27b0, #2196f3); /* Світло-фіолетово-синій градієнт */
             padding: 20px;
             text-align: center;
             color: white;
@@ -31,7 +30,6 @@
             font-size: 3em;
         }
 
-        /* Меню навігації */
         nav {
             display: flex;
             justify-content: center;
@@ -51,76 +49,70 @@
             color: #f5a623;
         }
 
-        /* Секція з зображенням та текстом */
-        .section-1 {
+        /* Галерея */
+        .gallery {
             display: flex;
-            align-items: center;
-            background-color: #ff6b6b;
-            color: white;
-            padding: 60px 20px;
-        }
-
-        .section-1 .image-container {
-            flex: 1;
-            text-align: center;
-        }
-
-        .section-1 .image-container img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .section-1 .content-container {
-            flex: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             padding: 20px;
+        }
+
+        .section {
+            flex: 1 1 calc(50% - 40px); /* Два елементи на рядок */
             text-align: center;
-            background: linear-gradient(45deg, #f5a623, #4ecdc4);
+            padding: 40px 20px;
+            color: white;
             border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px 0;
+            min-width: 300px;
+        }
+
+        .section-1 { 
+            background: linear-gradient(45deg, #4caf50, #81c784); /* Зелений градієнт */
+        }
+        .section-2 { 
+            background: linear-gradient(45deg, #f44336, #ff7961); /* Червоний градієнт */
+        }
+        .section-3 { 
+            background: linear-gradient(45deg, #5d5dff, #33d1ff); /* Третій клас */
+        }
+        .section-6 { 
+            background: linear-gradient(45deg, #fbc02d, #ffd54f); /* Темніший жовтий градієнт */
+        }
+        .section-7 { 
+            background: linear-gradient(45deg, #ff9800, #ffb74d); /* Оранжевий градієнт */
+        }
+
+        .section img {
+            max-width: 70px;
+            margin-bottom: 20px;
+            border-radius: 50%;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .section-1 .content-container h2 {
-            font-size: 2.5em;
+        .section h2 {
+            font-size: 2em;
             margin-bottom: 20px;
         }
 
-        .section-1 .btn-primary {
+        .btn-primary {
             display: inline-block;
             padding: 15px 30px;
             background-color: #355c7d;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.1em;
             text-decoration: none;
             border-radius: 30px;
             transition: background-color 0.3s;
             margin-top: 20px;
         }
 
-        .section-1 .btn-primary:hover {
+        .btn-primary:hover {
             background-color: #c06c84;
         }
 
-        /* Інші секції */
-        .section-2 { background: #ff6b6b; color: white; padding: 60px 20px; text-align: center; }
-        .section-3 { background: #f5a623; color: white; padding: 60px 20px; text-align: center; }
-        .section-4 { background: #355c7d; color: white; padding: 60px 20px; text-align: center; }
-        .section-5 { background: #c06c84; color: white; padding: 60px 20px; text-align: center; }
-        .section-6 { background: #6a0572; color: white; padding: 60px 20px; text-align: center; }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Нижній колонтитул */
         footer {
             background: #333;
             padding: 20px;
@@ -132,74 +124,81 @@
             font-size: 1.1em;
         }
 
-        /* Адаптивність */
         @media (max-width: 768px) {
-            .section-1 {
-                flex-direction: column;
+            .section {
+                flex: 1 1 100%; /* Один елемент на рядок для малих екранів */
+            }
+            .section img {
+                max-width: 50px;
+            }
+            .section h2 {
+                font-size: 1.6em;
+            }
+            .btn-primary {
+                padding: 10px 20px;
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Заголовок -->
     <header>
-        <h1>Вітаємо на сайті BANLEO!</h1>
-        <p>.</p>
+        <h1>Вітаємо на нашому кольоровому сайті!</h1>
+        <p>Сайт, де яскравість оживає.</p>
     </header>
 
-    <!-- Меню навігації -->
     <nav>
-        <a href="#section-1">1 клас</a>
-        <a href="calculators.html">Послуги</a>
-        <a href="#section-3">Галерея</a>
-        <a href="#section-4">Новини</a>
-        <a href="#section-5">Контакти</a>
-        <a href="#section-6">Відгуки</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Підручники</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Калькулятори</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F?authuser=0">Навчання</a>
+        <a href="https://sites.google.com/view/banleok/%D1%96%D0%B3%D1%80%D0%B8?authuser=0">Ігри</a>
     </nav>
 
-    <!-- Секція з зображенням зліва та текстом справа -->
-    <section id="section-1" class="section-1">
-        <div class="image-container">
+    <div class="gallery">
+        <!-- Перший клас -->
+        <section id="section-1" class="section section-1">
             <img src="https://i.ibb.co/wprTcPF/9494567.png" alt="Перший клас">
-        </div>
-        <div class="content-container">
             <h2>Перший клас</h2>
-            <p>Перегляньте підручники для 1 класу</p>
+            <p>Дізнайтеся більше про наші навчальні програми та методики, які допоможуть вашим дітям досягати успіху!</p>
             <a href="https://sites.google.com/view/banleok/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0" class="btn-primary">Перейти на сайт</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Інші секції контенту -->
-    <section id="section-2" class="section-2 fade-in">
-        <h2>Наші Послуги</h2>
-        <p>Ми пропонуємо повний спектр веб-послуг: від дизайну до розробки та підтримки. Наші клієнти завжди задоволені результатом.</p>
-    </section>
+        <!-- Другий клас -->
+        <section id="section-2" class="section section-2">
+            <img src="https://i.ibb.co/k5X1rQM/Eo-circle-red-number-2-svg.png" alt="Другий клас">
+            <h2>Другий клас</h2>
+            <p>Познайомтеся з нашими програмами для другого класу та дізнайтеся, як ми допомагаємо дітям рости й розвиватися.</p>
+            <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%83%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0" class="btn-primary">Ми на цьому сайті</a>
+        </section>
 
-    <section id="section-3" class="section-3 fade-in">
-        <h2>Галерея</h2>
-        <p>Перегляньте наші попередні роботи! Ми радіємо кожному проєкту та прагнемо досконалості.</p>
-    </section>
+        <!-- Третій клас -->
+        <section id="section-3" class="section section-3">
+            <img src="https://i.ibb.co/Y20Z7n7/Eo-circle-blue-white-number-3-svg.png" alt="Третій клас">
+            <h2>Третій клас</h2>
+            <p>Наші програми для третього класу покликані розвивати критичне мислення та творчість учнів.</p>
+            <a href="https://sites.google.com/view/banleok/%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F?authuser=0" class="btn-primary">Перейти на сайт</a>
+        </section>
 
-    <section id="section-4" class="section-4 fade-in">
-        <h2>Новини</h2>
-        <p>Слідкуйте за нашими останніми оновленнями, новинами та новими проєктами. Ми завжди в русі!</p>
-    </section>
+        <!-- Шостий клас -->
+        <section id="section-6" class="section section-6">
+            <img src="https://i.ibb.co/9WsQ797/Eo-circle-green-number-6-svg.png" alt="Шостий клас">
+            <h2>Шостий клас</h2>
+            <p>Дізнайтеся про спеціальні програми для шостого класу, які сприяють поглибленому навчанню та дослідженню.</p>
+            <a href="https://sites.google.com/view/banleok/%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0" class="btn-primary">Перейти на сайт</a>
+        </section>
 
-    <section id="section-5" class="section-5 fade-in">
-        <h2>Контакти</h2>
-        <p>Зв’яжіться з нами для отримання додаткової інформації або замовлення послуг. Ми відкриті до співпраці!</p>
-    </section>
+        <!-- Сьомий клас -->
+        <section id="section-7" class="section section-7">
+            <img src="https://i.ibb.co/cxhmmp2/Eo-circle-blue-number-7-svg.png" alt="Сьомий клас">
+            <h2>Сьомий клас</h2>
+            <p>Ознайомтеся з нашими програмами для сьомого класу, які допомагають розвивати навички критичного мислення.</p>
+            <a href="https://sites.google.com/view/banleok/%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%CC%81%D0%BD%D0%BD%D1%8F?authuser=0" class="btn-primary">Перейти на сайт</a>
+        </section>
+    </div>
 
-    <section id="section-6" class="section-6 fade-in">
-        <h2>Відгуки</h2>
-        <p>Наші клієнти довіряють нам та завжди задоволені роботою. Ось що вони кажуть про нас!</p>
-    </section>
-
-    <!-- Нижній колонтитул -->
     <footer>
-        <p>&copy; 2024 Кольоровий сайт. Усі права захищені.</p>
+        <p>© 2024 Кольоровий сайт. Всі права захищено.</p>
     </footer>
-
 </body>
 </html>
