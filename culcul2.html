@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+     <link rel="icon" href="https://i.ibb.co/LRZGHVj/OIG3-removebg-preview.png" type="image/png"> <!-- Додавання значка сайту -->
+    <style>
+        body {
 
+<title>Калькулятор дробів</title>
+<style>
+    /* Загальний стиль для калькулятора */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Стиль форми калькулятора */
+    #fractionCalculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 300px;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    /* Салатовий фон для чисельника та знаменника 1 */
+    #numerator1, #denominator1 {
+        background-color: #7FFF00; /* Салатовий */
+        color: black;
+    }
+
+    /* Жовтий фон для чисельника та знаменника 2 */
+    #numerator2, #denominator2 {
+        background-color: #FFD700; /* Жовтий */
+        color: black;
+    }
+
+    /* Стиль загальних елементів */
+    input[type="text"], select {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        width: 100%;
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    /* Стиль кнопки обчислення */
+    #calculateButton {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+    }
+
+    #calculateButton:hover {
+        background-color: #45a049;
+    }
+
+    /* Стиль блоку відповіді */
+    #answerBox {
+        background-color: #FFD6CC; /* Світло-рожевий */
+        border: 2px solid #FF6347; /* Червоний контур */
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        font-size: 18px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+    <form id="fractionCalculator">
+        <input type="text" id="numerator1" placeholder="Чисельник 1">
+        <input type="text" id="denominator1" placeholder="Знаменник 1">
+        
+        <!-- Один вибір дії для всього виразу -->
+        <select id="operator">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        
+        <input type="text" id="numerator2" placeholder="Чисельник 2">
+        <input type="text" id="denominator2" placeholder="Знаменник 2">
+        
+        <button type="button" id="calculateButton" onclick="calculate()">Обчислити</button>
+    </form>
+    <div id="answerBox"></div>
+
+    <script>
+        function calculate() {
+            var num1 = parseInt(document.getElementById('numerator1').value);
+            var den1 = parseInt(document.getElementById('denominator1').value);
+            var num2 = parseInt(document.getElementById('numerator2').value);
+            var den2 = parseInt(document.getElementById('denominator2').value);
+            var op = document.getElementById('operator').value;
+
+            var numeratorResult, denominatorResult;
+
+            // Виконуємо операцію над дробами
+            if (op === 'add') {
+                numeratorResult = (num1 * den2 + num2 * den1);
+                denominatorResult = (den1 * den2);
+            } else if (op === 'subtract') {
+                numeratorResult = (num1 * den2 - num2 * den1);
+                denominatorResult = (den1 * den2);
+            } else if (op === 'multiply') {
+                numeratorResult = num1 * num2;
+                denominatorResult = den1 * den2;
+            } else if (op === 'divide') {
+                numeratorResult = num1 * den2;
+                denominatorResult = den1 * num2;
+            }
+
+            // Відображаємо результат
+            var answerBox = document.getElementById('answerBox');
+            answerBox.innerHTML = "<p>Результат: " + numeratorResult + "/" + denominatorResult + "</p>";
+        }
+    </script>
+</body>
+</html>
+</head>
+<body>
+
+    <header>
+        <h1>Калькулятор звичайний</h1>
+        <p>Зручний інструмент для роботи з простими числами</p>
+    </header>
+
+    <nav>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%8E%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Калькулятори</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BA%D0%B0%D0%BB%D1%8C%D0%BA%D1%8E%D0%BB%D1%8F%D1%82%D0%BE%D1%80%D0%B8?authuser=0">Підручники</a>
+        <a href="https://sites.google.com/view/banleok/%D0%BD%D0%B0%D0%B2%D1%87%D0%B0%D0%BD%D0%BD%D1%8F?authuser=0">Навчання</a>
+        <a href="https://sites.google.com/view/banleok/%D1%96%D0%B3%D1%80%D0%B8?authuser=0">Ігри</a>
+    </nav>
+
+    <div class="container">
+        <div class="calculator">
+            <input type="text" class="display" id="display" disabled>
+            <div class="buttons">
+                <button>(</button>
+                <button>)</button>
+                <button id="backspace">←</button>
+                <button id="forwardspace">→</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="operator">÷</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="operator">×</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button class="operator">-</button>
+                <button>0</button>
+                <button>.</button>
+                <button class="operator">+</button>
+                <button class="equal">=</button>
+                <button class="operator">a²</button>
+                <button class="operator">aᵇ</button>
+                <button class="clear">C</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Banleo 2024 Калькулятори</p>
+    </footer>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.classList.contains('clear')) {
+                    display.value = '';
+                } else if (button.classList.contains('equal')) {
+                    try {
+                        display.value = eval(display.value.replace('÷', '/').replace('×', '*'));
+                    } catch {
+                        display.value = 'Error';
+                    }
+                } else if (button.id === 'backspace') {
+                    display.value = display.value.slice(0, -1);
+                } else if (button.id === 'forwardspace') {
+                    // Forwardspace functionality if needed
+                } else {
+                    display.value += button.textContent;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
