@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid #ccc;
+            font-size: 24px;
+            transition: background-color 0.3s ease;
+        }
+
+        td:hover {
+            background-color: #f5f5f5;
+        }
+
+        .playerX {
+            color: #d42a2a; /* червоний колір */
+        }
+
+        .playerO {
+            color: #228b22; /* зелений колір */
+        }
+
+        .reset-button {
+            display: block;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .reset-button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <p>
+        Гра складається з поля клітинок, натисніть на клітинку , щоб зробити хід.
+    </p>
+    <table>
+        <tr>
+            <td id="cell1" onclick="makeMove(0)"></td>
+            <td id="cell2" onclick="makeMove(1)"></td>
+            <td id="cell3" onclick="makeMove(2)"></td>
+        </tr>
+        <tr>
+            <td id="cell4" onclick="makeMove(3)"></td>
+            <td id="cell5" onclick="makeMove(4)"></td>
+            <td id="cell6" onclick="makeMove(5)"></td>
+        </tr>
+        <tr>
+            <td id="cell7" onclick="makeMove(6)"></td>
+            <td id="cell8" onclick="makeMove(7)"></td>
+            <td id="cell9" onclick="makeMove(8)"></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+    <button class="reset-button" onclick="resetGame()">Скинути гру</button>
+
+    <script>
+        let board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+        let currentPlayer = "X";
+        let gameActive = true;
+
+        function printBoard() {
+            for (let i = 0; i < 9; i += 3) {
+                console.log(board[i], "|", board[i + 1], "|", board[i + 2]);
+                if (i < 6) {
+                    console.log("-----------");
+                }
+            }
+        }
+
+        function makeMove(position) {
+            if (gameActive && board[position] === " ") {
+                board[position] = currentPlayer;
+                const cell = document.getElementById("cell" + (position + 1));
+                cell.textContent = currentPlayer;
+                cell.classList.add(currentPlayer === "X" ? "playerX" : "playerO"); // Додано клас відповідного гравця
+                if (checkWin()) {
+                    document.getElementById("result").textContent = "Гравець " + currentPlayer + " виграв!";
+                    gameActive = false;
+                } else if (checkTie()) {
+                    document.getElementById("result").textContent = "Нічия!";
+                    gameActive = false;
+                } else {
+                    currentPlayer = currentPlayer === "X" ? "O" : "X";
+                }
+            }
+        }
+
+        function checkWin() {
+            const winConditions = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (let condition of winConditions) {
+                const [a, b, c] = condition;
+                if (board[a] !== " " && board[a] === board[b] && board[b] === board[c]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function checkTie() {
+            return board.every(cell => cell !== " ");
+        }
+
+        function resetGame() {
+            board = [" ", " ", " ", " ", " ", " ", " ", " ", " "];
+            currentPlayer = "X";
+            gameActive = true;
+            document.getElementById("result").textContent = "";
+            for (let i = 1; i <= 9; i++) {
+                const cell = document.getElementById("cell" + i);
+                cell.textContent = "";
+                cell.classList.remove("playerX", "playerO"); // При скиданні гри видаляємо всі класи гравців
+            }
+        }
+    </script>
+</body>
+</html>
